@@ -179,3 +179,31 @@ body {
 .legal-links a:hover {
     color: var(--text-primary);
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.5rem;
+        padding-top: 2rem;
+    }
+    
+    .logo {
+        margin-top: 0;
+        text-align: center;
+    }
+
+    .lang-flags {
+        justify-content: center;
+    }
+
+    .spacer {
+        display: none; /* Hide spacer on mobile as layout is centered */
+    }
+
+    .features {
+        flex-direction: column; /* Stack features on mobile to prevent squeezing */
+        gap: 2rem;
+    }
+}
