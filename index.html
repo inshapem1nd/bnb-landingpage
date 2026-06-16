@@ -1,46 +1,133 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Built Not Born Blueprint</title>
-    <meta name="description" content="Built Not Born Blueprint — dein persönlicher Einstieg in Ernährung, Training und Mindset.">
+    <meta name="description" content="Built Not Born Blueprint — your personal guide to nutrition, training and mindset.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <!-- Gumroad Overlay Script für den direkten Checkout Popup -->
+    <script src="https://gumroad.com/js/gumroad.js"></script>
 </head>
 <body>
     <header class="header">
         <div class="logo">Built Not Born</div>
+        <div class="lang-switcher">
+            <select id="langSelect" onchange="changeLanguage(this.value)">
+                <option value="en">English</option>
+                <option value="de">Deutsch</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+            </select>
+        </div>
     </header>
 
     <main class="hero">
         <div class="container">
-            <h1 class="headline">Built Not Born Blueprint</h1>
-            <p class="subtitle">Dein ultimativer Leitfaden für Ernährung, Training und ein unzerstörbares Mindset. Transformiere deinen Körper und Geist von Grund auf.</p>
+            <h1 class="headline" data-i18n="headline">Built Not Born Blueprint</h1>
+            <p class="subtitle" data-i18n="subtitle">Your ultimate guide to nutrition, training, and an indestructible mindset. Transform your body and mind from the ground up.</p>
             
-            <a href="https://gumroad.com" target="_blank" rel="noopener noreferrer" class="cta-button">Jetzt Blueprint sichern</a>
+            <!-- Gumroad Link mit Checkout-Skip -->
+            <a href="https://inshapemind.gumroad.com/l/goovng?wanted=true" data-gumroad-single-product="true" class="cta-button" data-i18n="cta">Get the Blueprint now</a>
 
             <div class="features">
                 <div class="feature">
-                    <h3>Ernährung</h3>
-                    <p>Klare Strategien und Pläne, um deinen Körper optimal zu versorgen.</p>
+                    <h3 data-i18n="feat1_title">Nutrition</h3>
+                    <p data-i18n="feat1_desc">Clear strategies and plans to optimally fuel your body.</p>
                 </div>
                 <div class="feature">
-                    <h3>Training</h3>
-                    <p>Effiziente und erprobte Methoden für maximalen Muskelaufbau und Kraft.</p>
+                    <h3 data-i18n="feat2_title">Training</h3>
+                    <p data-i18n="feat2_desc">Efficient and proven methods for maximum muscle growth and strength.</p>
                 </div>
                 <div class="feature">
-                    <h3>Mindset</h3>
-                    <p>Entwickle die mentale Härte, um deine Ziele konsequent zu verfolgen.</p>
+                    <h3 data-i18n="feat3_title">Mindset</h3>
+                    <p data-i18n="feat3_desc">Develop the mental toughness to consistently pursue your goals.</p>
                 </div>
             </div>
         </div>
     </main>
 
     <footer class="footer">
-        <p>&copy; 2026 Built Not Born. Alle Rechte vorbehalten.</p>
+        <p data-i18n="footer">&copy; 2026 Built Not Born. All rights reserved.</p>
     </footer>
+
+    <script>
+        const translations = {
+            en: {
+                headline: "Built Not Born Blueprint",
+                subtitle: "Your ultimate guide to nutrition, training, and an indestructible mindset. Transform your body and mind from the ground up.",
+                cta: "Get the Blueprint now",
+                feat1_title: "Nutrition",
+                feat1_desc: "Clear strategies and plans to optimally fuel your body.",
+                feat2_title: "Training",
+                feat2_desc: "Efficient and proven methods for maximum muscle growth and strength.",
+                feat3_title: "Mindset",
+                feat3_desc: "Develop the mental toughness to consistently pursue your goals.",
+                footer: "&copy; 2026 Built Not Born. All rights reserved."
+            },
+            de: {
+                headline: "Built Not Born Blueprint",
+                subtitle: "Dein ultimativer Leitfaden für Ernährung, Training und ein unzerstörbares Mindset. Transformiere deinen Körper und Geist von Grund auf.",
+                cta: "Jetzt Blueprint sichern",
+                feat1_title: "Ernährung",
+                feat1_desc: "Klare Strategien und Pläne, um deinen Körper optimal zu versorgen.",
+                feat2_title: "Training",
+                feat2_desc: "Effiziente und erprobte Methoden für maximalen Muskelaufbau und Kraft.",
+                feat3_title: "Mindset",
+                feat3_desc: "Entwickle die mentale Härte, um deine Ziele konsequent zu verfolgen.",
+                footer: "&copy; 2026 Built Not Born. Alle Rechte vorbehalten."
+            },
+            es: {
+                headline: "Built Not Born Blueprint",
+                subtitle: "Tu guía definitiva sobre nutrición, entrenamiento y una mentalidad indestructible. Transforma tu cuerpo y mente desde cero.",
+                cta: "Consigue el Blueprint ahora",
+                feat1_title: "Nutrición",
+                feat1_desc: "Estrategias y planes claros para nutrir tu cuerpo de manera óptima.",
+                feat2_title: "Entrenamiento",
+                feat2_desc: "Métodos eficientes y probados para el máximo crecimiento muscular y fuerza.",
+                feat3_title: "Mentalidad",
+                feat3_desc: "Desarrolla la fortaleza mental para perseguir constantemente tus objetivos.",
+                footer: "&copy; 2026 Built Not Born. Todos los derechos reservados."
+            },
+            fr: {
+                headline: "Built Not Born Blueprint",
+                subtitle: "Votre guide ultime sur la nutrition, l'entraînement et un état d'esprit indestructible. Transformez votre corps et votre esprit de fond en comble.",
+                cta: "Obtenir le Blueprint",
+                feat1_title: "Nutrition",
+                feat1_desc: "Des stratégies et des plans clairs pour nourrir votre corps de manière optimale.",
+                feat2_title: "Entraînement",
+                feat2_desc: "Des méthodes efficaces et éprouvées pour un développement musculaire et une force maximums.",
+                feat3_title: "État d'esprit",
+                feat3_desc: "Développez la force mentale pour poursuivre constamment vos objectifs.",
+                footer: "&copy; 2026 Built Not Born. Tous droits réservés."
+            }
+        };
+
+        function changeLanguage(lang) {
+            document.documentElement.lang = lang;
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+        }
+
+        // Auto-detect browser language if possible, else default to 'en'
+        window.onload = () => {
+            const userLang = navigator.language || navigator.userLanguage;
+            let startLang = 'en';
+            if(userLang.startsWith('de')) startLang = 'de';
+            else if(userLang.startsWith('es')) startLang = 'es';
+            else if(userLang.startsWith('fr')) startLang = 'fr';
+            
+            document.getElementById('langSelect').value = startLang;
+            changeLanguage(startLang);
+        };
+    </script>
 </body>
 </html>

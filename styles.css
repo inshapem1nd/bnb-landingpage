@@ -27,13 +27,36 @@ body {
 .header {
     padding: 2rem 5%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: 900;
     letter-spacing: -0.5px;
+}
+
+/* Language Switcher */
+.lang-switcher select {
+    background-color: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--accent);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-family: var(--font-family);
+    font-size: 0.9rem;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+}
+.lang-switcher select:hover {
+    color: var(--text-primary);
+    border-color: var(--text-secondary);
+}
+.lang-switcher select option {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
 }
 
 /* Hero Section */
