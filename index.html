@@ -3,35 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Built Not Born Blueprint</title>
+    <title>Built Not Born</title>
     <meta name="description" content="Built Not Born Blueprint — your personal guide to nutrition, training and mindset.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <!-- Gumroad Overlay Script für den direkten Checkout Popup -->
+    <!-- Gumroad Overlay Script -->
     <script src="https://gumroad.com/js/gumroad.js"></script>
 </head>
 <body>
     <header class="header">
-        <div class="logo">Built Not Born</div>
-        <div class="lang-switcher">
-            <select id="langSelect" onchange="changeLanguage(this.value)">
-                <option value="en">English</option>
-                <option value="de">Deutsch</option>
-                <option value="es">Español</option>
-                <option value="fr">Français</option>
-            </select>
+        <div class="logo">INSHAPE MIND</div>
+        <div class="lang-flags">
+            <span onclick="changeLanguage('en')" title="English">🇬🇧</span>
+            <span onclick="changeLanguage('de')" title="Deutsch">🇩🇪</span>
+            <span onclick="changeLanguage('es')" title="Español">🇪🇸</span>
+            <span onclick="changeLanguage('fr')" title="Français">🇫🇷</span>
         </div>
+        <div class="spacer" style="width: 130px;"></div> <!-- Zum Zentrieren der Flaggen -->
     </header>
 
     <main class="hero">
         <div class="container">
-            <h1 class="headline" data-i18n="headline">Built Not Born Blueprint</h1>
+            <h1 class="headline" data-i18n="headline" style="white-space: nowrap; font-weight: 900; letter-spacing: -1.5px;">BUILT NOT BORN</h1>
+            <p class="app-coming" data-i18n="app_coming">App coming soon!</p>
             <p class="subtitle" data-i18n="subtitle">Your ultimate guide to nutrition, training, and an indestructible mindset. Transform your body and mind from the ground up.</p>
             
-            <!-- Gumroad Link mit Checkout-Skip -->
-            <a href="https://inshapemind.gumroad.com/l/goovng?wanted=true" data-gumroad-single-product="true" class="cta-button" data-i18n="cta">Get the Blueprint now</a>
+            <!-- Gumroad Link -->
+            <a href="https://inshapemind.gumroad.com/l/goovng?wanted=true" data-gumroad-single-product="true" class="cta-button" data-i18n="cta">GET INSHAPE</a>
 
             <div class="features">
                 <div class="feature">
@@ -50,59 +50,124 @@
         </div>
     </main>
 
+    <!-- Impressum & Datenschutz Section (Initially Hidden) -->
+    <section id="legal-section" class="legal-section" style="display: none;">
+        <div class="container" style="text-align: left; padding: 2rem 5%;">
+            <h2 id="legal-title" style="margin-bottom: 1rem;"></h2>
+            <div id="legal-content-box" style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;"></div>
+            <button onclick="document.getElementById('legal-section').style.display='none'" style="margin-top: 2rem; padding: 0.5rem 1rem; background: var(--accent); color: #fff; border: none; border-radius: 5px; cursor: pointer;">Schließen</button>
+        </div>
+    </section>
+
     <footer class="footer">
-        <p data-i18n="footer">&copy; 2026 Built Not Born. All rights reserved.</p>
+        <p data-i18n="footer">&copy; 2026 INSHAPE MIND. All rights reserved.</p>
+        <div class="legal-links">
+            <a href="#impressum" onclick="showLegal('impressum')" data-i18n="impressum_link">Impressum</a> | 
+            <a href="#datenschutz" onclick="showLegal('datenschutz')" data-i18n="datenschutz_link">Datenschutz</a>
+        </div>
     </footer>
 
     <script>
+        const impressumText = `
+            <strong>Angaben gemäß § 5 DDG</strong><br><br>
+            Tyrone Kreim<br>
+            Oidtmannhof 4<br>
+            41812 Erkelenz<br>
+            Deutschland<br><br>
+            <strong>Kontakt</strong><br>
+            E-Mail: inshapemind@outlook.com<br><br>
+            <strong>Umsatzsteuer</strong><br>
+            Gemäß § 19 Abs. 1 UStG wird keine Umsatzsteuer berechnet (Kleinunternehmerregelung).<br><br>
+            "Inshape Mind" und "Built Not Born" sind Projektbezeichnungen von Tyrone Kreim.<br><br>
+            <strong>Verbraucherstreitbeilegung</strong><br>
+            Ich bin nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+        `;
+
+        const datenschutzText = `
+            <strong>1. Verantwortlicher</strong><br>
+            Tyrone Kreim, Oidtmannhof 4, 41812 Erkelenz, inshapemind@outlook.com<br><br>
+            
+            <strong>2. Welche Daten werden erhoben</strong><br>
+            Diese Anwendung (Built Not Born Blueprint) selbst erhebt, speichert oder übermittelt keine personenbezogenen Daten. Eingaben in den Rechnern (Gewicht, Größe, Alter etc.) werden ausschließlich lokal in deinem Browser verarbeitet und nirgendwo gespeichert oder übertragen.<br><br>
+            
+            <strong>3. Zahlungsabwicklung</strong><br>
+            Der Kauf erfolgt über einen externen Anbieter (Gumroad bzw. Lemon Squeezy). Bei einem Kauf werden deine Daten (z.B. Name, E-Mail-Adresse, Zahlungsdaten) direkt von diesem Anbieter verarbeitet. Es gelten dessen Datenschutzbestimmungen:<br>
+            – Gumroad: gumroad.com/privacy<br>
+            – Lemon Squeezy: lemonsqueezy.com/privacy<br><br>
+            
+            <strong>4. Cookies und Tracking</strong><br>
+            Diese Seite verwendet aktuell keine Cookies, Analyse-Tools oder Tracking-Pixel.<br><br>
+            
+            <strong>5. Hosting</strong><br>
+            Diese Anwendung wird über Vercel Inc. gehostet. Beim Aufruf der Seite werden technisch notwendige Verbindungsdaten (z.B. IP-Adresse) durch den Hosting-Anbieter verarbeitet. Mehr dazu: vercel.com/legal/privacy-policy<br><br>
+            
+            <strong>6. Deine Rechte</strong><br>
+            Du hast jederzeit das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung deiner Daten sowie ein Beschwerderecht bei einer Datenschutzaufsichtsbehörde. Wende dich dafür an: inshapemind@outlook.com<br><br>
+            
+            <strong>7. Änderungen</strong><br>
+            Diese Datenschutzerklärung kann bei Weiterentwicklung der Anwendung (z.B. Hinzufügen von Tracking oder Newsletter) angepasst werden.
+        `;
+
         const translations = {
             en: {
-                headline: "Built Not Born Blueprint",
+                headline: "BUILT NOT BORN",
+                app_coming: "Inshape App coming soon!",
                 subtitle: "Your ultimate guide to nutrition, training, and an indestructible mindset. Transform your body and mind from the ground up.",
-                cta: "Get the Blueprint now",
+                cta: "GET INSHAPE",
                 feat1_title: "Nutrition",
                 feat1_desc: "Clear strategies and plans to optimally fuel your body.",
                 feat2_title: "Training",
                 feat2_desc: "Efficient and proven methods for maximum muscle growth and strength.",
                 feat3_title: "Mindset",
                 feat3_desc: "Develop the mental toughness to consistently pursue your goals.",
-                footer: "&copy; 2026 Built Not Born. All rights reserved."
+                footer: "&copy; 2026 INSHAPE MIND. All rights reserved.",
+                impressum_link: "Legal Notice",
+                datenschutz_link: "Privacy Policy"
             },
             de: {
-                headline: "Built Not Born Blueprint",
+                headline: "BUILT NOT BORN",
+                app_coming: "Inshape App kommt bald!",
                 subtitle: "Dein ultimativer Leitfaden für Ernährung, Training und ein unzerstörbares Mindset. Transformiere deinen Körper und Geist von Grund auf.",
-                cta: "Jetzt Blueprint sichern",
+                cta: "GET INSHAPE",
                 feat1_title: "Ernährung",
                 feat1_desc: "Klare Strategien und Pläne, um deinen Körper optimal zu versorgen.",
                 feat2_title: "Training",
                 feat2_desc: "Effiziente und erprobte Methoden für maximalen Muskelaufbau und Kraft.",
                 feat3_title: "Mindset",
                 feat3_desc: "Entwickle die mentale Härte, um deine Ziele konsequent zu verfolgen.",
-                footer: "&copy; 2026 Built Not Born. Alle Rechte vorbehalten."
+                footer: "&copy; 2026 INSHAPE MIND. Alle Rechte vorbehalten.",
+                impressum_link: "Impressum",
+                datenschutz_link: "Datenschutz"
             },
             es: {
-                headline: "Built Not Born Blueprint",
+                headline: "BUILT NOT BORN",
+                app_coming: "¡Aplicación Inshape próximamente!",
                 subtitle: "Tu guía definitiva sobre nutrición, entrenamiento y una mentalidad indestructible. Transforma tu cuerpo y mente desde cero.",
-                cta: "Consigue el Blueprint ahora",
+                cta: "GET INSHAPE",
                 feat1_title: "Nutrición",
                 feat1_desc: "Estrategias y planes claros para nutrir tu cuerpo de manera óptima.",
                 feat2_title: "Entrenamiento",
                 feat2_desc: "Métodos eficientes y probados para el máximo crecimiento muscular y fuerza.",
                 feat3_title: "Mentalidad",
                 feat3_desc: "Desarrolla la fortaleza mental para perseguir constantemente tus objetivos.",
-                footer: "&copy; 2026 Built Not Born. Todos los derechos reservados."
+                footer: "&copy; 2026 INSHAPE MIND. Todos los derechos reservados.",
+                impressum_link: "Aviso Legal",
+                datenschutz_link: "Política de Privacidad"
             },
             fr: {
-                headline: "Built Not Born Blueprint",
+                headline: "BUILT NOT BORN",
+                app_coming: "Application Inshape à venir !",
                 subtitle: "Votre guide ultime sur la nutrition, l'entraînement et un état d'esprit indestructible. Transformez votre corps et votre esprit de fond en comble.",
-                cta: "Obtenir le Blueprint",
+                cta: "GET INSHAPE",
                 feat1_title: "Nutrition",
                 feat1_desc: "Des stratégies et des plans clairs pour nourrir votre corps de manière optimale.",
                 feat2_title: "Entraînement",
                 feat2_desc: "Des méthodes efficaces et éprouvées pour un développement musculaire et une force maximums.",
                 feat3_title: "État d'esprit",
                 feat3_desc: "Développez la force mentale pour poursuivre constamment vos objectifs.",
-                footer: "&copy; 2026 Built Not Born. Tous droits réservés."
+                footer: "&copy; 2026 INSHAPE MIND. Tous droits réservés.",
+                impressum_link: "Mentions légales",
+                datenschutz_link: "Politique de confidentialité"
             }
         };
 
@@ -115,9 +180,30 @@
                     el.innerHTML = translations[lang][key];
                 }
             });
+            // Update active flag opacity
+            const flags = document.querySelectorAll('.lang-flags span');
+            flags.forEach(f => f.style.opacity = '0.4');
+            let activeIndex = { 'en':0, 'de':1, 'es':2, 'fr':3 }[lang];
+            if(flags[activeIndex]) flags[activeIndex].style.opacity = '1';
         }
 
-        // Auto-detect browser language if possible, else default to 'en'
+        function showLegal(type) {
+            const section = document.getElementById('legal-section');
+            const title = document.getElementById('legal-title');
+            const content = document.getElementById('legal-content-box');
+            
+            if (type === 'impressum') {
+                title.innerText = document.documentElement.lang === 'de' ? 'Impressum' : 'Legal Notice';
+                content.innerHTML = impressumText;
+            } else {
+                title.innerText = document.documentElement.lang === 'de' ? 'Datenschutz' : 'Privacy Policy';
+                content.innerHTML = datenschutzText;
+            }
+            
+            section.style.display = 'block';
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }
+
         window.onload = () => {
             const userLang = navigator.language || navigator.userLanguage;
             let startLang = 'en';
@@ -125,7 +211,6 @@
             else if(userLang.startsWith('es')) startLang = 'es';
             else if(userLang.startsWith('fr')) startLang = 'fr';
             
-            document.getElementById('langSelect').value = startLang;
             changeLanguage(startLang);
         };
     </script>
