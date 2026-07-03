@@ -34,18 +34,24 @@
             <a href="https://inshapemind.gumroad.com/l/goovng?wanted=true" data-gumroad-single-product="true" class="cta-button" data-i18n="cta">GET INSHAPE</a>
 
             <div class="features">
-                <div class="feature">
-                    <h3 data-i18n="feat1_title">Nutrition</h3>
-                    <p data-i18n="feat1_desc">Clear strategies and plans to optimally fuel your body.</p>
-                </div>
-                <div class="feature">
-                    <h3 data-i18n="feat2_title">Training</h3>
-                    <p data-i18n="feat2_desc">Efficient and proven methods for maximum muscle growth and strength.</p>
-                </div>
-                <div class="feature">
-                    <h3 data-i18n="feat3_title">Mindset</h3>
-                    <p data-i18n="feat3_desc">Develop the mental toughness to consistently pursue your goals.</p>
-                </div>
+                <details class="feature-accordion">
+                    <summary><h3 data-i18n="feat1_title">Nutrition</h3><span class="icon">+</span></summary>
+                    <div class="accordion-content">
+                        <p data-i18n="feat1_desc">Clear strategies and plans to optimally fuel your body.</p>
+                    </div>
+                </details>
+                <details class="feature-accordion">
+                    <summary><h3 data-i18n="feat2_title">Training</h3><span class="icon">+</span></summary>
+                    <div class="accordion-content">
+                        <p data-i18n="feat2_desc">Efficient and proven methods for maximum muscle growth and strength.</p>
+                    </div>
+                </details>
+                <details class="feature-accordion">
+                    <summary><h3 data-i18n="feat3_title">Mindset</h3><span class="icon">+</span></summary>
+                    <div class="accordion-content">
+                        <p data-i18n="feat3_desc">Develop the mental toughness to consistently pursue your goals.</p>
+                    </div>
+                </details>
             </div>
         </div>
     </main>
@@ -186,6 +192,18 @@
             let activeIndex = { 'en':0, 'de':1, 'es':2, 'fr':3 }[lang];
             if(flags[activeIndex]) flags[activeIndex].style.opacity = '1';
         }
+
+        // Accordion Icon Toggle
+        document.querySelectorAll('.feature-accordion').forEach(details => {
+            details.addEventListener('toggle', (e) => {
+                const icon = details.querySelector('.icon');
+                if (details.open) {
+                    icon.textContent = '-';
+                } else {
+                    icon.textContent = '+';
+                }
+            });
+        });
 
         function showLegal(type) {
             const section = document.getElementById('legal-section');
