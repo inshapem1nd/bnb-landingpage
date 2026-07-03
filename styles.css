@@ -151,26 +151,21 @@ body {
 
 .feature-accordion {
     flex: 1;
-    background-color: #111;
-    border: 2px solid #333; /* Uniform lighter gray outline */
-    border-radius: 25px; /* Fully rounded corners */
-    padding: 1.25rem;
-    transition: background-color 0.2s ease, transform 0.2s ease;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #333; /* Trennlinie nach unten */
+    border-radius: 0;
+    padding: 1rem 0;
+    transition: transform 0.2s ease;
 }
 
-/* Custom Text Colors */
-.color-nutrition summary h3, .color-nutrition .accordion-content p {
-    color: #4CAF50;
-}
-.color-training summary h3, .color-training .accordion-content p {
-    color: #F44336;
-}
-.color-mindset summary h3, .color-mindset .accordion-content p {
-    color: #9B59B6;
+/* All Text Yellow */
+.feature-accordion summary h3, .feature-accordion .accordion-content p, .feature-accordion .icon {
+    color: #FFD700;
 }
 
 .feature-accordion:hover {
-    background-color: #1a1a1a;
+    background-color: transparent;
 }
 
 .feature-accordion summary {
@@ -256,6 +251,12 @@ body {
 
     .hero-image {
         max-height: 250px; /* Forces crop on mobile */
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+        margin-left: 5%;
+        margin-right: 5%;
     }
 
     .lang-flags {
