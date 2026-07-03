@@ -144,7 +144,7 @@ body {
     gap: 1rem;
     text-align: left;
     margin-top: 2rem;
-    padding-top: 3rem;
+    padding-top: 1rem; /* Näher an die obere Trennlinie */
     margin-bottom: 3rem; /* Space before the button */
     border-top: 1px solid var(--accent);
 }
@@ -270,5 +270,7 @@ body {
     .features {
         flex-direction: column; /* Stack features on mobile to prevent squeezing */
         gap: 0.8rem; /* Closer together on mobile */
+        padding-left: 2rem; /* Mehr Abstand zum Rand auf Mobile */
+        padding-right: 2rem;
     }
 }
