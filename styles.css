@@ -256,7 +256,6 @@ body {
 
     .hero-image {
         max-height: 250px; /* Forces crop on mobile */
-        object-position: center center; /* Centers the crop perfectly on mobile */
     }
 
     .lang-flags {
