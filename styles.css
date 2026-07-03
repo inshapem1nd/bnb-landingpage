@@ -145,10 +145,22 @@ body {
 .feature-accordion {
     flex: 1;
     background-color: #111;
-    border: 1px solid var(--accent);
-    border-radius: 12px;
+    border: 2px solid var(--accent);
+    border-radius: 25px; /* Fully rounded corners */
     padding: 1.25rem;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    margin-bottom: 3rem; /* Space before the button */
+}
+
+/* Custom Border Colors */
+.border-nutrition {
+    border-color: #4CAF50;
+}
+.border-training {
+    border-color: #F44336;
+}
+.border-mindset {
+    border-color: #9B59B6;
 }
 
 .feature-accordion:hover {
