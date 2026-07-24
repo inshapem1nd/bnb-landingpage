@@ -302,7 +302,9 @@ body {
 .price-info {
     font-size: 0.85rem;
     color: var(--text-secondary);
-    margin: 5px auto 0 auto; /* Exactly 5px below the button */
+    margin-top: -8px; /* Forcefully pull up to negate any hidden button bottom-spacing */
+    margin-bottom: 0;
+    line-height: 1;
     display: block;
     text-align: center;
     opacity: 0.8;
