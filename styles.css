@@ -303,7 +303,7 @@ body {
 .price-info {
     font-size: 0.85rem;
     color: var(--text-secondary);
-    margin-top: 5px; /* 5px Abstand zum Button */
+    margin-top: 8px; /* 8px Abstand zum Button */
     margin-bottom: 3rem; /* Abstand nach unten zur Linie wiederherstellen */
     line-height: 1;
     display: block;
