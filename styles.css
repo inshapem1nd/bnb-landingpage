@@ -80,6 +80,101 @@ body {
     padding: 0 0.1em;
 }
 
+/* Recommendations Section */
+.recommendations {
+    padding: 4rem 0;
+    border-top: 1px solid #333;
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    letter-spacing: -1px;
+}
+
+.rec-cards {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.rec-card {
+    flex: 1;
+    background-color: #111;
+    border: 1px solid #333;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.rec-image-wrapper {
+    width: 100%;
+    aspect-ratio: 4 / 5; /* Leicht hochformatig */
+    background-color: #0a0a0a;
+}
+
+.rec-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.rec-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.rec-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    color: var(--text-primary);
+}
+
+.rec-content p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex: 1;
+}
+
+.rec-btn {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--text-secondary);
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.rec-btn:hover {
+    background-color: var(--text-primary);
+    color: var(--bg-color);
+}
+
+.affiliate-disclaimer {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    opacity: 0.6;
+    text-align: center;
+    margin-top: 3rem;
+    line-height: 1.4;
+}
+
+/* Legal Section */
 /* Hero Section */
 .hero {
     flex: 1;
@@ -272,5 +367,10 @@ body {
         gap: 0.8rem; /* Closer together on mobile */
         padding-left: 2rem; /* Mehr Abstand zum Rand auf Mobile */
         padding-right: 2rem;
+    }
+
+    .rec-cards {
+        flex-direction: column;
+        gap: 2rem;
     }
 }
