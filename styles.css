@@ -82,9 +82,9 @@ body {
 
 /* Recommendations Section */
 .recommendations {
-    padding: 4rem 0;
+    padding: 2rem 0 4rem 0; /* Reduced top padding */
     border-top: 1px solid #333;
-    margin-top: 2rem;
+    margin-top: 1rem; /* Closer to the element above */
     text-align: left;
 }
 
@@ -302,7 +302,8 @@ body {
 .price-info {
     font-size: 0.85rem;
     color: var(--text-secondary);
-    margin: 0.2rem 0 0 0; /* Clear default margins and pull it closer */
+    margin: 5px auto 0 auto; /* Exactly 5px below the button */
+    display: block;
     text-align: center;
     opacity: 0.8;
 }
