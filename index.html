@@ -117,7 +117,9 @@
     </footer>
 
     <script>
-        const impressumText = `
+        const legalTranslations = {
+            de: {
+                impressum: `
             <strong>Angaben gemäß § 5 DDG</strong><br><br>
             Tyrone Kreim<br>
             Oidtmannhof 4<br>
@@ -130,9 +132,8 @@
             "Inshape Mind" und "Built Not Born" sind Projektbezeichnungen von Tyrone Kreim.<br><br>
             <strong>Verbraucherstreitbeilegung</strong><br>
             Ich bin nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
-        `;
-
-        const datenschutzText = `
+                `,
+                datenschutz: `
             <strong>1. Verantwortlicher</strong><br>
             Tyrone Kreim, Oidtmannhof 4, 41812 Erkelenz, inshapemind@outlook.com<br><br>
             
@@ -158,7 +159,117 @@
             
             <strong>8. Änderungen</strong><br>
             Diese Datenschutzerklärung kann bei Weiterentwicklung der Anwendung (z.B. Hinzufügen von Tracking oder Newsletter) angepasst werden.
-        `;
+                `
+            },
+            en: {
+                impressum: `
+            <strong>Information pursuant to § 5 DDG</strong><br><br>
+            Tyrone Kreim<br>
+            Oidtmannhof 4<br>
+            41812 Erkelenz<br>
+            Germany<br><br>
+            <strong>Contact</strong><br>
+            Email: inshapemind@outlook.com<br><br>
+            <strong>VAT</strong><br>
+            According to § 19 Abs. 1 UStG, no value added tax is charged (small business regulation).<br><br>
+            "Inshape Mind" and "Built Not Born" are project names by Tyrone Kreim.<br><br>
+            <strong>Consumer Dispute Resolution</strong><br>
+            I am not willing and not obliged to participate in dispute resolution proceedings before a consumer arbitration board.
+                `,
+                datenschutz: `
+            <strong>1. Data Controller</strong><br>
+            Tyrone Kreim, Oidtmannhof 4, 41812 Erkelenz, Germany, inshapemind@outlook.com<br><br>
+            <strong>2. Which data is collected</strong><br>
+            This application (Built Not Born Blueprint) itself does not collect, store, or transmit any personal data. Inputs in the calculators (weight, height, age, etc.) are processed exclusively locally in your browser and are not saved or transmitted anywhere.<br><br>
+            <strong>3. Payment Processing</strong><br>
+            Purchases are processed via an external provider (Gumroad or Lemon Squeezy). When making a purchase, your data (e.g., name, email address, payment details) is processed directly by this provider. Their privacy policies apply:<br>
+            – Gumroad: gumroad.com/privacy<br>
+            – Lemon Squeezy: lemonsqueezy.com/privacy<br><br>
+            <strong>4. Cookies and Tracking</strong><br>
+            This site itself does not use analytics tools or tracking pixels. However, technically necessary cookies may be set by the payment provider for the error-free functioning of the payment overlay (Gumroad).<br><br>
+            <strong>5. Hosting</strong><br>
+            This application is hosted via Vercel Inc. When visiting the site, technically necessary connection data (e.g., IP address) is processed by the hosting provider. More info: vercel.com/legal/privacy-policy<br><br>
+            <strong>6. Affiliate Links & Amazon Associates Program</strong><br>
+            This website participates in the Amazon EU Associates Program. Affiliate links to Amazon are integrated on our pages. If you click on such a link and make a purchase on Amazon, we receive an advertising fee (commission). Amazon thereby learns that you came from our site and may set cookies to track the origin of the order. Further information on data usage by Amazon can be found in Amazon's privacy policy: amazon.de/privacy<br><br>
+            <strong>7. Your Rights</strong><br>
+            You have the right to access, rectification, erasure, and restriction of processing of your data at any time, as well as the right to lodge a complaint with a data protection supervisory authority. Contact: inshapemind@outlook.com<br><br>
+            <strong>8. Changes</strong><br>
+            This privacy policy may be adapted as the application evolves.
+                `
+            },
+            es: {
+                impressum: `
+            <strong>Información según el § 5 de la DDG</strong><br><br>
+            Tyrone Kreim<br>
+            Oidtmannhof 4<br>
+            41812 Erkelenz<br>
+            Alemania<br><br>
+            <strong>Contacto</strong><br>
+            Correo electrónico: inshapemind@outlook.com<br><br>
+            <strong>IVA</strong><br>
+            Según el § 19 Abs. 1 UStG (ley alemana del IVA), no se cobra impuesto sobre el valor añadido.<br><br>
+            "Inshape Mind" y "Built Not Born" son nombres de proyectos de Tyrone Kreim.<br><br>
+            <strong>Resolución de litigios de consumo</strong><br>
+            No estoy dispuesto ni obligado a participar en procedimientos de resolución ante una junta arbitral de consumo.
+                `,
+                datenschutz: `
+            <strong>1. Responsable</strong><br>
+            Tyrone Kreim, Oidtmannhof 4, 41812 Erkelenz, Alemania, inshapemind@outlook.com<br><br>
+            <strong>2. Qué datos se recopilan</strong><br>
+            Esta aplicación (Built Not Born Blueprint) no recopila, almacena ni transmite datos personales por sí misma. Las entradas en las calculadoras (peso, altura, edad, etc.) se procesan exclusivamente de forma local en tu navegador.<br><br>
+            <strong>3. Procesamiento de Pagos</strong><br>
+            Las compras se procesan a través de un proveedor externo (Gumroad o Lemon Squeezy). Se aplican sus políticas de privacidad:<br>
+            – Gumroad: gumroad.com/privacy<br>
+            – Lemon Squeezy: lemonsqueezy.com/privacy<br><br>
+            <strong>4. Cookies y Seguimiento</strong><br>
+            Esta página en sí no utiliza herramientas de análisis ni píxeles de seguimiento. Sin embargo, el proveedor de pagos (Gumroad) puede establecer cookies técnicamente necesarias.<br><br>
+            <strong>5. Alojamiento web (Hosting)</strong><br>
+            Esta aplicación está alojada a través de Vercel Inc. Al visitar la página, el proveedor de alojamiento procesa datos de conexión técnicamente necesarios. Más info: vercel.com/legal/privacy-policy<br><br>
+            <strong>6. Enlaces de Afiliados y Amazon</strong><br>
+            Este sitio web participa en el Programa de Afiliados de Amazon EU. Si haces clic en dicho enlace y realizas una compra en Amazon, recibimos una comisión. Amazon sabe que llegaste desde nuestra página y puede utilizar cookies para rastrear el pedido. Más información: amazon.es/privacy<br><br>
+            <strong>7. Tus Derechos</strong><br>
+            Tienes derecho al acceso, rectificación, supresión y limitación del tratamiento de tus datos en cualquier momento. Contacto: inshapemind@outlook.com<br><br>
+            <strong>8. Cambios</strong><br>
+            Esta política de privacidad puede ser adaptada a medida que la aplicación evolucione.
+                `
+            },
+            fr: {
+                impressum: `
+            <strong>Informations conformément au § 5 DDG</strong><br><br>
+            Tyrone Kreim<br>
+            Oidtmannhof 4<br>
+            41812 Erkelenz<br>
+            Allemagne<br><br>
+            <strong>Contact</strong><br>
+            E-Mail : inshapemind@outlook.com<br><br>
+            <strong>TVA</strong><br>
+            Conformément au § 19 Abs. 1 UStG, aucune taxe sur la valeur ajoutée n'est facturée.<br><br>
+            "Inshape Mind" et "Built Not Born" sont des noms de projets de Tyrone Kreim.<br><br>
+            <strong>Règlement des litiges</strong><br>
+            Je ne suis ni disposé ni obligé de participer à des procédures de règlement des litiges devant un conseil d'arbitrage de la consommation.
+                `,
+                datenschutz: `
+            <strong>1. Responsable</strong><br>
+            Tyrone Kreim, Oidtmannhof 4, 41812 Erkelenz, Allemagne, inshapemind@outlook.com<br><br>
+            <strong>2. Quelles données sont collectées</strong><br>
+            Cette application (Built Not Born Blueprint) ne collecte, ne stocke ni ne transmet aucune donnée personnelle elle-même. Les saisies dans les calculatrices (poids, taille, âge, etc.) sont traitées exclusivement localement dans votre navigateur.<br><br>
+            <strong>3. Traitement des paiements</strong><br>
+            Les achats sont traités via un fournisseur externe (Gumroad ou Lemon Squeezy). Leurs politiques de confidentialité s'appliquent :<br>
+            – Gumroad: gumroad.com/privacy<br>
+            – Lemon Squeezy: lemonsqueezy.com/privacy<br><br>
+            <strong>4. Cookies et Suivi</strong><br>
+            Ce site n'utilise lui-même aucun outil d'analyse ni pixel de suivi. Cependant, des cookies techniquement nécessaires peuvent être installés par le fournisseur (Gumroad).<br><br>
+            <strong>5. Hébergement</strong><br>
+            Cette application est hébergée via Vercel Inc. Lors de la visite du site, les données de connexion techniquement nécessaires sont traitées par le fournisseur d'hébergement. En savoir plus : vercel.com/legal/privacy-policy<br><br>
+            <strong>6. Liens d'affiliation et Amazon</strong><br>
+            Ce site participe au Programme Partenaires d'Amazon EU. Si vous cliquez sur un tel lien et effectuez un achat sur Amazon, nous recevons une commission. Amazon apprend ainsi que vous venez de notre site et peut utiliser des cookies pour retracer la commande. Informations : amazon.fr/privacy<br><br>
+            <strong>7. Vos Droits</strong><br>
+            Vous avez le droit à tout moment d'accéder, de rectifier, de supprimer et de limiter le traitement de vos données. Contact : inshapemind@outlook.com<br><br>
+            <strong>8. Modifications</strong><br>
+            Cette politique de confidentialité peut être adaptée au fur et à mesure que l'application évolue.
+                `
+            }
+        };
 
         const translations = {
             en: {
@@ -288,12 +399,15 @@
             const title = document.getElementById('legal-title');
             const content = document.getElementById('legal-content-box');
             
+            const lang = document.documentElement.lang || 'en';
+            const texts = legalTranslations[lang] || legalTranslations['en'];
+            
             if (type === 'impressum') {
                 title.innerText = document.documentElement.lang === 'de' ? 'Impressum' : 'Legal Notice';
-                content.innerHTML = impressumText;
+                content.innerHTML = texts.impressum;
             } else {
                 title.innerText = document.documentElement.lang === 'de' ? 'Datenschutz' : 'Privacy Policy';
-                content.innerHTML = datenschutzText;
+                content.innerHTML = texts.datenschutz;
             }
             
             section.style.display = 'block';
