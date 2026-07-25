@@ -269,9 +269,9 @@ body {
     padding: 1.5rem;
 }
 
-/* All Text Neon Yellow */
+/* All Text White */
 .feature-accordion summary h3, .feature-accordion .accordion-content p, .feature-accordion .icon {
-    color: #FFFF00;
+    color: var(--text-primary);
 }
 
 .feature-accordion:hover {
@@ -387,5 +387,7 @@ body {
     .rec-cards {
         flex-direction: column;
         gap: 2rem;
+        padding-left: 2.5rem; /* Shrinks the cards proportionally on mobile */
+        padding-right: 2.5rem;
     }
 }
