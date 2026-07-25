@@ -310,6 +310,28 @@ body {
     line-height: 1.5;
 }
 
+.feat-list {
+    margin-top: 1rem;
+    padding-left: 1.2rem;
+    list-style-type: none;
+}
+
+.feat-list li {
+    color: var(--text-primary); /* Changed to white */
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.feat-list li::before {
+    content: "▪";
+    color: #FFFF00; /* Neon yellow bullet point */
+    position: absolute;
+    left: -1.2rem;
+    top: 0;
+}
+
 /* Price Info underneath CTA */
 .price-info {
     font-size: 0.85rem;
