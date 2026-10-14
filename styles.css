@@ -44,24 +44,23 @@ body {
 
 /* Header */
 .header {
-    padding: 2rem 5%;
+    padding: 1rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.15rem;
     font-weight: 900;
     letter-spacing: -0.5px;
-    margin-top: 15px;
 }
 
 /* Language Flags */
 .lang-flags {
     display: flex;
-    gap: 15px;
-    font-size: 1.5rem;
+    gap: 12px;
+    font-size: 1.3rem;
 }
 
 .lang-flags span {
@@ -211,37 +210,31 @@ body {
     background-color: #111;
 }
 
-/* Hero Section: Text oben, Bild darunter (Bild blendet oben in den Hintergrund aus) */
+/* Hero Section: Bild direkt unter dem Header, Headline blendet halb ins Bild */
 .hero {
-    position: relative;
-    flex: 1;
     text-align: center;
-    padding: 1rem 0 0 0;
-    min-height: min(92svh, 780px);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    padding: 0 0 2.5rem 0;
+}
+
+.hero-image {
+    display: block;
+    width: min(100%, 1100px);
+    height: min(50svh, 520px);
+    margin: 0 auto;
+    object-fit: cover;
+    object-position: 57% 40%;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 14%, #000 58%, transparent 100%), linear-gradient(to right, transparent 0, #000 14%, #000 86%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-image: linear-gradient(to bottom, transparent 0, #000 14%, #000 58%, transparent 100%), linear-gradient(to right, transparent 0, #000 14%, #000 86%, transparent 100%);
+    mask-composite: intersect;
+    pointer-events: none;
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
     width: 100%;
-    padding-top: 0.5rem;
-}
-
-.hero-image {
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    width: min(100%, 1300px);
-    height: 60%;
-    object-fit: cover;
-    object-position: 58% 38%;
-    -webkit-mask-image: radial-gradient(ellipse 62% 70% at 55% 58%, #000 38%, transparent 100%);
-    mask-image: radial-gradient(ellipse 62% 70% at 55% 58%, #000 38%, transparent 100%);
-    pointer-events: none;
+    margin-top: -3.2rem;
 }
 
 .container {
@@ -293,8 +286,8 @@ body {
     justify-content: center;
     gap: 1.5rem;
     text-align: left;
-    margin-top: 2rem;
-    margin-bottom: 3rem; /* Space before the button */
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
 }
 
 .feature-accordion {
@@ -431,26 +424,10 @@ body {
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        justify-content: center;
-        gap: 1.5rem;
-        padding-top: 2rem;
-    }
-    
-    .logo {
-        margin-top: 0;
-        text-align: center;
-    }
-
-    .hero {
-        min-height: min(88svh, 700px);
-    }
-
     .hero-image {
         width: 100%;
-        height: 62%;
-        object-position: 57% 40%;
+        height: 48svh;
+        max-height: 440px;
     }
 
     .container {
@@ -460,14 +437,6 @@ body {
 
     .subtitle {
         font-size: 0.95rem;
-    }
-
-    .lang-flags {
-        justify-content: center;
-    }
-
-    .spacer {
-        display: none; /* Hide spacer on mobile as layout is centered */
     }
 
     .features {
@@ -486,4 +455,12 @@ body {
     .accordion-content {
         padding: 0 1rem 1rem 1rem;
     }
+}
+
+/* Intro-Satz über den Karten */
+.features-intro {
+    text-align: center;
+    margin-top: 2.5rem;
+    margin-bottom: 0;
+    color: var(--text-secondary);
 }
